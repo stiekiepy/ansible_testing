@@ -1,0 +1,16 @@
+---
+- name: Installing package
+  hosts: all
+  become: yes
+  gather_facts: false
+
+  tasks:
+    - name: Copy file to remote host
+      copy:
+        src: "/var/tmp/transfer_file.txt"
+        dest: "/var/tmp/"
+        mode: '0644'
+
+  
+
+

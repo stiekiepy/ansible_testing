@@ -1,0 +1,19 @@
+---
+- name: Installing package
+  hosts: all
+  become: yes
+  gather_facts: false
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install tree package
+      apt:
+        name: tree
+        state: present
+
+  
+
+

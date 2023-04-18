@@ -1,0 +1,22 @@
+---
+all:
+  vars:
+    ansible_connection: ssh
+
+  hosts:
+    stian_tor1_linux:
+      ansible_host: 172.105.111.208
+    stian_tor1_linux2:
+      ansible_host: 172.105.111.209
+    stian_tor1_linux3:
+      ansible_host: 172.105.10.193
+#      vars:
+
+  children:
+    linux:
+      hosts:
+        stian_tor1_linux:
+        stian_tor1_linux2:
+    debian:
+      hosts:
+        stian_tor1_linux3:
